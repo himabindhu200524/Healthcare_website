@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HealthyCare Clinic</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f2f9ff;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #023e8a;
+      padding: 12px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 15px;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+    }
+    h2 {
+      color: #023e8a;
+    }
+    .more-info {
+  display: none;
+}
+
+    .doctors, .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      width: 220px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #0077b6;
+      color: white;
+      border: none;
+      font-weight: bold;
+    }
+    footer {
+      background-color: #03045e;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HealthyCare Clinic</h1>
+    <p>Your Health, Our Priority</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#doctors">Doctors</a>
+    <a href="#appointment">Appointment</a>
+    <a href="#medicines">Medicines</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <div id="profile-bar" style="display: none; position: fixed; top: 10px; right: 20px; background: #f0f0f0; padding: 10px 15px; border-radius: 20px; font-weight: bold;">
+  👤 Hello, User | <a href="#" onclick="logout()">Logout</a>
+</div>
+
+    <h2>Welcome to HealthyCare</h2>
+    <p>Welcome to HealthyCare Clinic — your trusted partner in health and wellness. We are dedicated to delivering exceptional medical care that combines advanced technology with a human touch. At HealthyCare, every patient is treated with respect, empathy, and personalized attention. Whether you need a routine check-up, a consultation with a specialist, or long-term care, we are here to support you every step of the way. Your health is our mission, and your smile is our success..</p>
+  </section>
+ <section id="about">
+    <h2>About Us</h2>
+    <p>HealthyCare Clinic is a trusted and modern healthcare facility dedicated to providing high-quality medical services with a compassionate touch. Established in 2015, we have consistently prioritized patient well-being, safety, and satisfaction above all. Our clinic brings together a team of highly qualified doctors, nurses, and healthcare professionals who are committed to excellence in medical care.
+
+We offer a wide range of services including general health check-ups, cardiology, pediatrics, dermatology, neurology, and more — all under one roof. Our doctors are not only experts in their fields but also deeply empathetic toward patient needs, ensuring each person receives personalized attention and care.
+
+With state-of-the-art medical equipment, a clean and welcoming environment, and a patient-first approach, HealthyCare Clinic aims to make healthcare more accessible and reliable for everyone. Whether it's a routine consultation or specialized treatment, we strive to deliver the best outcomes with professionalism and care.
+
+Our mission is to serve the community with integrity and dedication, and our vision is to be recognized as a leader in ethical and affordable healthcare delivery..</p>
+  </section>
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="card">
+       <h3>General Check-up</h3>
+        <p>Routine and preventive care for all ages.</p>
+        <button onclick="toggleInfo('info1')">More Info</button>
+        <div class="more-info" id="info1">Our general check-up service includes physical exams, blood pressure monitoring, cholesterol testing, and personalized health advice.</div>
+      </div>  
+      <div class="card">
+        <h3>Pediatrics</h3>
+        <p>Child care and vaccinations.</p>
+        <button onclick="toggleInfo('info2')">More Info</button>
+        <div class="more-info" id="info2">Our pediatric services include well-child visits, immunizations, growth tracking, developmental assessments, and care for common childhood illnesses. We ensure a kid-friendly environment for the comfort of your little ones.</div>
+      </div>
+      <div class="card">
+        <h3>Cardiology</h3>
+        <p>Heart health checkups and diagnostics.</p>
+        <button onclick="toggleInfo('info3')">More Info</button>
+        <div class="more-info" id="info3">We offer ECG, ECHO, TMT, and expert consultation for heart-related issues including chest pain, palpitations, and hypertension.</div>
+      </div>
+      <div class="card">
+        <h3>Skin Care</h3>
+        <p>Dermatology services and treatments.</p>
+        <button onclick="toggleInfo('info4')">More Info</button>
+        <div class="more-info" id="info4">Our dermatology department provides treatment for acne, eczema, pigmentation, hair loss, and cosmetic skin procedures using the latest techniques.</div>
+      </div>
+    </div>  
+  </section>
+
+  <section id="doctors">
+    <h2>Meet Our Doctors</h2>
+    <div class="doctors">
+      <div class="card">
+        <h3>Dr. Anjali Reddy</h3>
+        <p>Cardiologist</p>
+      </div>
+      <div class="card">
+        <h3>Dr. Meena Kapoor</h3>
+        <p>Dermatologist</p>
+      </div>
+      <div class="card">
+        <h3>Dr. Amit Verma</h3>
+        <p>Pediatrician</p>
+      </div>
+      <div class="card">
+        <h3>Dr. Rahul Sharma</h3>
+        <p>Neurologist</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="appointment">
+    <h2>Book an Appointment</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+
+      <label for="date">Preferred Date:</label>
+      <input type="date" id="date" required>
+
+      <label for="doctor">Select Doctor:</label>
+      <select id="doctor">
+        <option>Dr. Anjali Reddy</option>
+        <option>Dr. Meena Kapoor</option>
+        <option>Dr. Amit Verma</option>
+        <option>Dr. Rahul Sharma</option>
+      </select>
+
+      <button type="submit">Book Appointment</button>
+    </form>
+    <div id="confirmation-message" style="color: green; font-weight: bold; margin-top: 10px;"></div>
+  </section>
+  <section id="medicines">
+  <h2>Order Medicines</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Paracetamol</h3>
+      <p>For fever and pain relief</p>
+      <p>Price: ₹20</p>
+    </div>
+    <div class="card">
+      <h3>Amoxicillin</h3>
+      <p>Antibiotic for infections</p>
+      <p>Price: ₹75</p>
+    </div>
+    <div class="card">
+      <h3>Vitamin D3</h3>
+      <p>Bone and immune support</p>
+      <p>Price: ₹100</p>
+    </div>
+  </div>
+
+  <form style="margin-top: 30px;">
+    <label for="medicine-name">Select Medicine:</label>
+    <select id="medicine-name" required>
+      <option value="">-- Choose Medicine --</option>
+      <option>Paracetamol</option>
+      <option>Amoxicillin</option>
+      <option>Vitamin D3</option>
+    </select>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" min="1" required>
+
+    <label for="delivery">Delivery Address:</label>
+    <input type="text" id="delivery" required>
+
+    <button type="submit">Order Now</button>
+  </form>
+  <div id="order-message" style="color: green; font-weight: bold; margin-top: 10px;"></div>
+</section>
+
+<section id="login">
+  <form>
+    <h2>Login to HealthyCare</h2>
+    <label for="username">Enter Your Name:</label>
+    <input type="text" id="username" required>
+    <button type="submit">Login</button>
+  </form>
+</section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@healthycare.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: 123 Health Street,visakhapatnam, India</p>
+  </section>
+ <footer>
+    <p>&copy; 2025 HealthyCare Clinic. All rights reserved.</p>
+  </footer>
+    <footer>
+    <p>&copy; 2025 HealthyCare Clinic. All rights reserved.</p>
+  </footer>
+  <script>
+   const loginForm = document.querySelector("#login form");
+
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      localStorage.setItem("clinicUser", username);
+
+      const loginMessage = document.createElement("div");
+      loginMessage.textContent = "✅ You have logged in successfully!";
+      loginMessage.style.color = "green";
+      loginMessage.style.fontWeight = "bold";
+      loginMessage.style.marginTop = "10px";
+      loginMessage.id = "login-success";
+      loginForm.appendChild(loginMessage);
+
+
+      setTimeout(() => {
+        document.querySelectorAll("section").forEach(section => {
+          section.style.display = "block";
+        });
+
+        document.getElementById("login").style.display = "none";
+
+        const savedUser = localStorage.getItem("clinicUser") || "User";
+        const profileBar = document.getElementById("profile-bar");
+        profileBar.innerHTML = `👤 Hello, ${savedUser} | <a href="#" onclick="logout()">Logout</a>`;
+        profileBar.style.display = "block";
+
+        document.getElementById("home").scrollIntoView({ behavior: "smooth" });
+      }, 1000);
+    });
+
+    function logout() {
+      localStorage.removeItem("clinicUser");
+      document.querySelectorAll("section").forEach(section => {
+        if (section.id !== "login") {
+          section.style.display = "none";
+        }
+      });
+      document.getElementById("profile-bar").style.display = "none";
+      document.getElementById("login").style.display = "block";
+    }
+
+    window.onload = function () {
+      document.querySelectorAll("section").forEach(section => {
+        if (section.id !== "login") {
+          section.style.display = "none";
+        }
+      });
+
+      const savedUser = localStorage.getItem("clinicUser");
+      if (savedUser) {
+        const profileBar = document.getElementById("profile-bar");
+        profileBar.innerHTML = `👤 Hello, ${savedUser} | <a href="#" onclick="logout()">Logout</a>`;
+        profileBar.style.display = "block";
+        document.getElementById("login").style.display = "none";
+        document.querySelectorAll("section").forEach(section => {
+          section.style.display = "block";
+        });
+      }
+    };
+
+    function toggleInfo(id) {
+      const infoBox = document.getElementById(id);
+      infoBox.style.display = (infoBox.style.display === "none" || infoBox.style.display === "") ? "block" : "none";
+    }
+
+    const appointmentForm = document.querySelector("#appointment form");
+    const confirmationMessage = document.getElementById("confirmation-message");
+
+    appointmentForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      confirmationMessage.textContent = "✅ Thank you! Your appointment has been booked successfully.";
+    });
+  
+const orderForm = document.querySelector("#medicines form");
+const orderMessage = document.getElementById("order-message");
+
+orderForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  orderMessage.textContent = "✅ Your medicine order has been placed successfully!";
+});
+
+function logout() {
+  localStorage.removeItem("clinicUser");
+
+  document.querySelectorAll("section").forEach(section => {
+    if (section.id !== "login") {
+      section.style.display = "none";
+    }
+  });
+
+  document.getElementById("profile-bar").style.display = "none";
+  document.getElementById("login").style.display = "block";
+
+  const loginMsg = document.getElementById("login-success");
+  if (loginMsg) loginMsg.remove();
+}
+
+</script>
+
+</body>
+</html>
